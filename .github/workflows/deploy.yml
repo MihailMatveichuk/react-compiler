@@ -38,6 +38,10 @@ jobs:
 
             - name: Setup Pages
               uses: actions/configure-pages@v5
+              with:
+                  # Сам включает GitHub Pages (источник — GitHub Actions),
+                  # если сайт ещё не создан в Settings → Pages.
+                  enablement: true
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
