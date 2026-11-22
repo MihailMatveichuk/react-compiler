@@ -7,6 +7,8 @@ import { HeavyList, RenderBadge, useFakeItems, ReRenderButton } from "./RenderCo
  * хотя строка поиска не менялась.
  */
 export function WithUseMemo() {
+    "use no memo";
+
     const [query, setQuery] = useState("");
     const [clicks, setClicks] = useState(0);
     const items = useFakeItems();
@@ -47,6 +49,8 @@ export function WithUseMemo() {
  * Меняем query — shown новый, ребёнок перерисовывается.
  */
 const MemoFilteredList = memo(function MemoFilteredList({ shown }) {
+    "use no memo";
+
     return (
         <div className="mt-3 rounded-xl border border-dashed border-neutral-300 p-3">
             <RenderBadge label="3.ребёнок" />

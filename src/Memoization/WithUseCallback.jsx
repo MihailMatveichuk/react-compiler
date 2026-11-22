@@ -7,6 +7,8 @@ import { ReRenderButton, RenderBadge } from "./RenderCount";
  * React.memo видит новый onSelect и всё равно рендерит ребенка.
  */
 export function WithUseCallback() {
+    "use no memo";
+
     const [selected, setSelected] = useState(null);
     const [clicks, setClicks] = useState(0);
 
@@ -32,6 +34,8 @@ export function WithUseCallback() {
 }
 
 const MemoMenu = memo(function MemoMenu({ onSelect }) {
+    "use no memo";
+
     return (
         <div className="mt-3 rounded-xl border border-dashed border-neutral-300 p-3">
             <RenderBadge label="4.ребёнок" />

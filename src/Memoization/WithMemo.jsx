@@ -7,6 +7,8 @@ import { HeavyList, ReRenderButton, RenderBadge, useFakeItems } from "./RenderCo
  * и счётчик рендера ребёнка перестаёт расти.
  */
 export function WithMemo() {
+    "use no memo";
+
     const [clicks, setClicks] = useState(0);
     const items = useFakeItems();
 
@@ -29,6 +31,8 @@ export function WithMemo() {
 }
 
 function HeavyChild({ items }) {
+    "use no memo";
+
     return (
         <div className="mt-3 rounded-xl border border-dashed border-neutral-300 p-3">
             <RenderBadge label="2.ребёнок" />
